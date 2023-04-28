@@ -3,34 +3,34 @@
     <img src="./assets/escenarios.png" style="width: 20%;margin-left: 40%;" />
     <h3>Sistema de informacion de registros prestamos de escenarios deportivos secccional Sogamoso-UPTC</h3>
     <table mat-table [dataSource]="datos" class="mat-elevation-z8" #tabla1>
+            <ng-container matColumnDef="ID">
+                <th mat-header-cell *matHeaderCellDef> ID </th>
+                <td mat-cell *matCellDef="let cancha"> {{cancha.ID}} </td>
+            </ng-container>
 
-        <ng-container matColumnDef="ID">
-            <th mat-header-cell *matHeaderCellDef> ID </th>
-            <td mat-cell *matCellDef="let cancha"> {{cancha.ID}} </td>
-        </ng-container>
+            <ng-container matColumnDef="Nom_Escenario">
+                <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                <td mat-cell *matCellDef="let cancha"> {{cancha.Nom_Escenario}} </td>
+            </ng-container>
 
-        <ng-container matColumnDef="Nom_Escenario">
-            <th mat-header-cell *matHeaderCellDef> Nombre </th>
-            <td mat-cell *matCellDef="let cancha"> {{cancha.Nom_Escenario}} </td>
-        </ng-container>
+            <ng-container matColumnDef="Descripcion">
+                <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+                <td mat-cell *matCellDef="let cancha"> {{cancha.Descripcion}} </td>
+            </ng-container>
 
-        <ng-container matColumnDef="Descripcion">
-            <th mat-header-cell *matHeaderCellDef> Descripcion </th>
-            <td mat-cell *matCellDef="let cancha"> {{cancha.Descripcion}} </td>
-        </ng-container>
+
+            <ng-container matColumnDef="Acciones">
+                <th mat-header-cell *matHeaderCellDef> Acciones </th>
+                <td mat-cell *matCellDef="let j = index;">
+                    <button nat-raised-button color="warn" focusable="false">Modificar</button>
+                    <button nat-raised-button color="warn" focusable="false">Borrar</button>
+
+                </td>
+            </ng-container>
         
-
-        <ng-container matColumnDef="Acciones">
-            <th mat-header-cell *matHeaderCellDef> Acciones </th>
-            <td mat-cell *matCellDef="let j = index;">
-                <button nat-raised-button color="warn" focusable="false">Modificar</button>
-                <button nat-raised-button color="warn" focusable="false">Borrar</button>
-
-            </td>
-        </ng-container>
-
         <tr mat-header-row *matHeaderRowDef="columnas"></tr>
         <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+       
     </table>
 
     <button class="crear"><a mat-list-item href="/crearEsc" class="lista">Crear Nuevo Escenario</a>

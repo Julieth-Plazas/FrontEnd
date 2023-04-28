@@ -7,12 +7,8 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
-          "strict": true,
-          "environment": {
-            "source": "src/environments/environment.ts",
-            "dev": "src/environments/environment.dev.ts",
-            "prod": "src/environments/environment.prod.ts"
-          }
+          "strict": true
+         
         }
       },
       "root": "",
@@ -31,7 +27,12 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "redicts",
+                "input": "src",
+                "output": "/"
+              }
             ],
             "styles": [
               "node_modules/angular-calendar/css/angular-calendar.css",

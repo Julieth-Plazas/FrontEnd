@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Scenary } from '../Model/Scenary';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ListarEscService {
 
-  constructor(private http:HttpClient) { }
 
-  Url='http://localhost:8080/ScenarySports/api/Scenary'
+ private  Url='http://localhost:8080/ScenarySports/api/Scenary';
+ constructor(private http:HttpClient) { }
 
-  public readAll():Observable<any>{
-    return this.http.get(this.Url);
-  }
+   readAll():Observable<Scenary[]>{
+    return this.http.get<Scenary[]>('${this.Url}/lista');
+   }
 }
