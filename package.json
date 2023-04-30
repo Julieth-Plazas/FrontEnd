@@ -28,6 +28,7 @@
     "angular-calendar": "^0.31.0",
     "bootstrap": "^5.2.3",
     "date-fns": "^2.29.3",
+    "http-server": "^14.1.1",
     "jquery": "^3.6.4",
     "jquey": "^0.0.1-security",
     "moment": "^2.29.4",

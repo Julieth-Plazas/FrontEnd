@@ -1,6 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild} from '@angular/core';
 import { MatTable } from '@angular/material/table';
-import { ListarEscService } from 'src/app/service/listar-esc.service';
 
 @Component({
   selector: 'app-visualizar-admon',

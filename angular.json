@@ -27,12 +27,8 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              {
-                "glob": "redicts",
-                "input": "src",
-                "output": "/"
-              }
+              "src/assets"
+              
             ],
             "styles": [
               "node_modules/angular-calendar/css/angular-calendar.css",

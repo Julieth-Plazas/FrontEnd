@@ -13,6 +13,6 @@ export class ListarEscService {
  constructor(private http:HttpClient) { }
 
    readAll():Observable<Scenary[]>{
-    return this.http.get<Scenary[]>('${this.Url}/lista');
+    return this.http.get<Scenary[]>(this.Url+ 'lista');
    }
 }
