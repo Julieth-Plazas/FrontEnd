@@ -1,24 +1,41 @@
-import { Component, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { MatTable } from '@angular/material/table';
+import { da } from 'date-fns/locale';
+import { Escenario } from 'src/app/Model/Escenario';
+import { ListarEscService } from 'src/app/service/listar-esc.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-visualizar-admon',
-  templateUrl: './visualizar-admon.component.html',
+  templateUrl:'./visualizar-admon.component.html',
   styleUrls: ['./visualizar-admon.component.css']
 })
-export class VisualizarAdmonComponent {
-  columnas: string[] = ['ID','Nom_Escenario','Descripcion','Acciones'];
 
-  datos: cancha[] = [new cancha(1, 'Futbol Sala 1','Cancha sintetica futbol sala 1'),
+export class VisualizarAdmonComponent implements OnInit{
+  Scenary: Escenario[];
+  constructor(private ServiceScenary:ListarEscService, private router:Router){  }
 
-];
+  ngOnInit(): void {
+    this.getScenary(); 
+  }
 
-articuloselect: cancha = new cancha(0, "", "");
+  updateS(id:number){
+    this.router.navigate(['actualizarEsc',id]);
+  }
 
-@ViewChild(MatTable) tabla1!: MatTable<cancha>;
-}
 
-export class cancha {
-constructor(public ID: number,  public Nom_Escenario: string, public Descripcion: string) {
-}
+deleteS(id:number){
+    this.ServiceScenary.deleteS(id).subscribe(dato=>{
+    console.log(dato);
+     this.getScenary();
+    });
+  }
+
+  private getScenary(){
+    this.ServiceScenary.readAllScenarys().subscribe(dato=>{
+      this.Scenary=dato;
+    });
+  }
+
+ 
 }
