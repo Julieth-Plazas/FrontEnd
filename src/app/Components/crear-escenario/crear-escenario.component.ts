@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Escenario } from 'src/app/Model/Escenario';
 import { ListarEscService } from 'src/app/service/listar-esc.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-crear-escenario',
@@ -21,6 +22,7 @@ saveScenary(){
     console.log(dato);
     this.GoList();
   },error => console.log(error));
+  Swal.fire('Guardado', `El Escenario ha sido guardado con éxito`, 'success');
    
 }
 GoList(){
@@ -30,3 +32,4 @@ onSubmit(){
   this.saveScenary();
 }
 }
+
