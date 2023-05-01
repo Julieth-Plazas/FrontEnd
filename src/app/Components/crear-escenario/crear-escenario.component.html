@@ -3,18 +3,18 @@
 <div class="titulo" style="align-content: center;">
     <img src="./assets/escenarios.png" style="width: 20%;margin-left: 40%;" />
     <h3>Sistema de informacion de registros prestamos de escenarios deportivos secccional Sogamoso-UPTC</h3>
-    <form class="custom-form" method="post">
+    <form (ngSubmit)="onSubmit()" class="custom-form" method="post">
 
         <div class="Seccion">
             <h1>CREAR NUEVO ESCENARIO DEPORTIVO</h1>
         </div>
         <div class="datos">
             <label>Nombre</label>
-            <input type="Codigo" name="Nombre" placeholder="Nombre" required="required" />
+            <input type="Codigo" name="Nombre" placeholder="Nombre" required="required" id="Nombre" [(ngModel)]="Scenary.nameScenary" />
         </div>
         <div class="datos">
             <label>Descripcion</label>
-            <input type="Nombre" name="Descripcion" placeholder="Descripcion" required="required" />
+            <input type="Nombre" name="Descripcion" placeholder="Descripcion" required="required" id="Descripcion" [(ngModel)]="Scenary.description" />
         </div>
 
         
