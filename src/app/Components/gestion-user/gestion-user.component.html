@@ -2,38 +2,32 @@
 <div class="titulo" style="align-content: center;">
     <img src="./assets/escenarios.png" style="width: 20%;margin-left: 40%;" />
     <h3>Sistema de informacion de registros prestamos de escenarios deportivos secccional Sogamoso-UPTC</h3>
-    <table mat-table [dataSource]="datos" class="mat-elevation-z8" #tabla1>
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>FECHA</th>
+                <th>HORA</th>
+                <th>USUARIO</th>
+                <th>ESCENARIO</th>
+                <th>ACCIONES</th>
+              </tr>
+              </thead>
 
-        <ng-container matColumnDef="ID">
-            <th mat-header-cell *matHeaderCellDef> ID </th>
-            <td mat-cell *matCellDef="let articulo"> {{articulo.ID}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="Fecha">
-            <th mat-header-cell *matHeaderCellDef> Fecha </th>
-            <td mat-cell *matCellDef="let articulo"> {{articulo.Fecha}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="Hora">
-            <th mat-header-cell *matHeaderCellDef> Hora </th>
-            <td mat-cell *matCellDef="let articulo"> {{articulo.Hora}} </td>
-        </ng-container>
-        <ng-container matColumnDef="Nom_Escenario">
-            <th mat-header-cell *matHeaderCellDef> Nom_Escenario</th>
-            <td mat-cell *matCellDef="let articulo"> {{articulo.Nom_Escenario}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="Acciones">
-            <th mat-header-cell *matHeaderCellDef> Acciones </th>
-            <td mat-cell *matCellDef="let j = index;">
-                <button nat-raised-button color="warn" focusable="false">Modificar</button>
-                <button nat-raised-button color="warn" focusable="false">Borrar</button>
-
-            </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="columnas"></tr>
-        <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+              <tbody>
+                <tr *ngFor= "let Prestamo of booking">
+                  <td>{{Prestamo.id}}</td>
+                  <td>{{Prestamo.date}}</td>
+                  <td>{{Prestamo.hour}}</td>
+                  <td>{{Prestamo.user.userCode}}</td>
+                  <td>{{Prestamo.scenary.nameScenary}}</td>
+                  <td>
+                    <!--<button (click)="updateS(Escenario.id)"  color="warn" focusable="false">Modificar</button>-->
+                    <button (click)="deleteB(Prestamo.id)" color="warn" focusable="false">Borrar</button>
+          
+                </td>
+              </tr>
+            </tbody>
     </table>
 
     <button class="crear"><a mat-list-item href="/reserva" class="lista">Reservar</a>
