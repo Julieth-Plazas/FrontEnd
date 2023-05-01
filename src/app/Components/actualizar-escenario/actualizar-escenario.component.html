@@ -1,0 +1,26 @@
+<html>
+
+<div class="titulo" style="align-content: center;">
+    <img src="./assets/escenarios.png" style="width: 20%;margin-left: 40%;" />
+    <h3>Sistema de informacion de registros prestamos de escenarios deportivos secccional Sogamoso-UPTC</h3>
+    <form (ngSubmit)="onSubmit()" class="custom-form" method="post"  #escenarioForm = "ngForm">
+
+        <div class="Seccion">
+            <h1>ACTUALIZAR UN ESCENARIO DEPORTIVO</h1>
+        </div>
+        <div class="datos">
+            <label>Nombre</label>
+            <input type="Codigo" name="Nombre" placeholder="Nombre" required="required" id="Nombre" [(ngModel)]="Scenary.nameScenary" #Nombre="ngModel" />
+        </div>
+        <div class="datos">
+            <label>Descripcion</label>
+            <input type="Nombre" name="Descripcion" placeholder="Descripcion" required="required" id="Descripcion" [(ngModel)]="Scenary.description" #Descripcion="ngModel" />
+        </div>
+
+        
+        <button class="crear" type="submit" [disabled]= "!escenarioForm.form.valid">Actualizar Escenario Deportivo</button>
+        <button class="Cancelar" type="submit" >Cancelar</button>
+    </form>
+</div>
+
+</html>

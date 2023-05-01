@@ -1,0 +1,116 @@
+
+.titulo {
+    min-width: 900px;
+    max-width: 90%;
+    margin: 0px auto;
+    background: rgba(1, 1, 1, 0.353);
+    padding: 2rem 2rem;
+    margin: auto;
+    border-radius: 2.5rem;
+    background-color: #d5c3c37a;
+    box-shadow: 13px 13px 20px #19191a, -13px -13px 20px #171717;
+    color: rgba(13, 12, 12, 0.576);
+    margin-top: 2rem;
+}
+
+
+.titulo h3{
+    
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+   
+}
+custom-form {
+    min-width: 200px;
+    max-width: 30%;
+    margin: 0px auto;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 2rem 2rem;
+    margin: auto;
+    border-radius: 2.5rem;
+    background-color: #0000009c;
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+    color: black;
+    margin-top: 2rem;
+  }
+  .custom-form input {
+    display: block;
+    margin: 2rem 0;
+    width: 50%;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    border: none;
+    box-shadow: inset -5px -5px 15px rgba(255, 255, 255, 0.8), inset 5px 5px 10px
+        rgba(0, 0, 0, 0.1);
+    border: 0 none;
+    background: #ebf5fc;
+    text-align: center;
+    margin-left: 25%;
+    
+  }
+  .Seccion{
+    background-color: #ffcc00;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.Seccion h1{
+    padding: 10px 40px;
+    font-weight: normal;
+    font-size: 28px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+.datos{
+    text-align: center;
+    margin-top: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: #0e0d0d;
+}
+input{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+.crear{
+    margin-left: 25%;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border: none;
+    font-size: 0.875rem;
+    color: #0e0d0d;
+    font-weight: bold;
+    background-color: #ffcc00;
+    width: 50%;
+    display: block;
+    padding: 0.875rem 1rem;
+    border-radius: 1.5rem;
+    margin-top: 50px;
+    cursor: pointer;
+}
+.Cancelar{
+    margin-left: 80%;
+    width: 15%;
+    font-size: 0.875rem;
+    color: #0e0d0d;
+    display: block;
+    padding: 0.875rem 1rem;
+    border-radius: 1.5rem;
+    margin-top: 50px;
+    cursor: pointer;
+    background-color: #c9e1e7d8;
+
+}
+select{
+    margin-bottom: 10px;
+        margin-top: 10px;
+        font-family: cursive, sans-serif;
+        outline: 0;
+        background: #ebf5fc;
+        color: black;
+        padding: 4px;
+        border-radius: 9px;
+        width: 50%;
+}
