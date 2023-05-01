@@ -3,53 +3,43 @@
 <div class="titulo" style="align-content: center;">
     <img src="./assets/escenarios.png" style="width: 20%;margin-left: 40%;" />
     <h3>Sistema de informacion de registros prestamos de escenarios deportivos secccional Sogamoso-UPTC</h3>
-    <form class="custom-form" method="post">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="custom-form" method="post" #bookingForm="ngForm">
 
         <div class="Seccion">
             <h1>Solicitar Reserva</h1>
         </div>
         <div class="datos">
             <label>Codigo</label>
-            <input type="Codigo" name="email" placeholder="Codigo" required="required" />
+            <input type="Codigo"  name="Codigo" placeholder="Codigo" required="required" [(ngModel)]="user.userCode"/>
         </div>
-        <div class="datos">
+       <!-- <div class="datos">
             <label>Nombre</label>
-            <input type="Nombre" name="nombre" placeholder="nombre" required="required" />
+            <input type="Nombre"  name="nombre" placeholder="nombre" required="required" [(ngModel)]="user.name" #Nombre="ngModel" />
         </div>
 
         <div class="datos">
             <label>Carrera</label>
-            <div>
-                <select name="membership" id="membership" class="datos">
-                    <option value="sistemas">Ingenieria de sisstemas y computacion</option>
-                    <option value="electronica">Ingenieria Electronica</option>
-                    <option value="industrial" selected>Ingenieria Industrial</option>
-                    <option value="minas">Ingenieria de minas</option>
-                    <option value="geologica">Ingenieria geologica</option>
-                    <option value="finanzas">Finanzas y comercio internacional</option>
-                    <option value="administracion">Administracion de Empresas</option>
-                    <option value="contaduria">Contaduria Publica</option>
-                </select>
-            </div>
-        </div>
+            <input type="Carrera"  name="Carrera" placeholder="Carrera" required="required" [(ngModel)]="user.school" #Carrera="ngModel" />
+        </div>-->
         <div class="datos">
             <label>Escenario</label>
             <div>
-                <select name="membership" id="membership" class="datos">
-                    <option value="sistemas">Futbol Sala 1</option>
-                    <option value="electronica">Futbol Sala 2</option>
-                    <option value="industrial" selected>Voley arena</option>
-                    <option value="minas">Futbol 11</option>
-                    <option value="geologica">Tenis</option>
-                    <option value="finanzas">Voley piso</option>
-                    <option value="administracion">Basquetbol</option>
+                <select name="Escenario" id=Escenario class="datos">
+                    <option value="">Selecciona un escenario</option>
+                    <option *ngFor="let Escenario of Scenary" [value]="Escenario.id" >{{Escenario.nameScenary}}</option>
+                                      
                 </select>
             </div>
         </div>
 
         <div class="datos">
-            <label for="start">Fecha y hora</label>
-            <input type="datetime-local" id="start" name="trip-start" value="" min="2018-01-01" max="2018-12-31">
+            <label for="start">Fecha</label>
+            <input type="date" id="start" name="trip-start" value=""  [(ngModel)]="booking.date">
+
+        </div>
+        <div class="datos">
+            <label for="start">Hora</label>
+            <input type="time" id="start" name="trip-start" value=""  [(ngModel)]="booking.hour">
 
         </div>
 
