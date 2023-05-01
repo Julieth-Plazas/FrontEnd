@@ -22,7 +22,9 @@ const routes: Routes = [
   {path: "login",component: LoginComponent},
   {path: "crearEsc", component: CrearEscenarioComponent},
   {path: "verEscenarios", component: VisualizarAdmonComponent},
-  {path: "reporte", component: ReportesComponent}
+  {path: "reporte", component: ReportesComponent},
+  {path:"**",pathMatch:"full",redirectTo: "login"}
+
   
 
 ];
